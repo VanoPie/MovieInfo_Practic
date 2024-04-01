@@ -1,0 +1,62 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1100" d:DesignHeight="650"
+        x:Class="MovieInfo.MainWindow"
+        Icon="avares://MovieInfo/filmicon.png"
+        Width="1100"
+        Height="650"
+        WindowStartupLocation="CenterScreen"
+        Title="Информация о фильмах">
+        <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Name="Zagol" Margin = "0 10 0 0" FontSize = "25" FontWeight="Bold">Управление информацией о фильмах</TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" Margin = "15 10 0 0"> Поиск по наименованию фильма: </TextBlock>
+                <TextBox Name="Search_Film" Width="200" Margin ="15 10 0 0" TextChanged="SearchingFilm"></TextBox>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center"
+                               x:Name="TitleSearch" Margin ="15 10 0 0">Фильтрация по жанру фильма: </TextBlock>
+                    <ComboBox Name="CmbViewMovie" 
+                              x:CompileBindings="False"
+                              SelectionChanged="viewMovieFilter_OnClick" Width="200" Margin ="35 10 0 0">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Жанр}"></TextBlock>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+            </StackPanel>
+             
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="JSONSelect" Margin ="15 10 0 0" Content="Выбрать JSON файл" Click="ReadJsonFile" />
+                <Button Name="AddButton" Margin ="15 10 0 0" Content="Ручной ввод" Click="AddData_Click" ></Button>
+                <Button Name="EditButton" Margin ="15 10 0 0" Content="Изменение записи" Click="EditData_Click" ></Button>
+                <Button Name="DeleteButton" Margin ="15 10 0 0" Content="Удалить запись" Click="DeleteData_Click" ></Button>
+                <Button Name="Reset" Margin ="15 10 0 0" Content="Сброс фильтров" Click="Reset_OnClick"></Button>
+            </StackPanel>
+        
+            <DataGrid Name="DataGrid" x:CompileBindings="False" Margin ="15 20 15 30" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Height="400" IsReadOnly="true">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Код}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Название" Binding="{Binding Название}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Режиссер" Binding="{Binding Режиссер}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Композитор" Binding="{Binding Композитор}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Жанр" Binding="{Binding Жанр}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Сценарист" Binding="{Binding Сценарист}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Звук" Binding="{Binding Звук}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Цвет" Binding="{Binding Цвет}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Формат" Binding="{Binding Формат}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Количество частей" Binding="{Binding Количество_частей}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="ExitProgram" Margin ="15 10 0 0" Content="Выход" Click="Exit_OnClick" /></StackPanel>
+            </StackPanel>
+    </Grid>
+</Window>

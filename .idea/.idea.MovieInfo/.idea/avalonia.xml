@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="MovieInfo/App.axaml" value="MovieInfo/MovieInfo.csproj" />
+        <entry key="MovieInfo/EditorWindow.axaml" value="MovieInfo/MovieInfo.csproj" />
+        <entry key="MovieInfo/InfoWindow.axaml" value="MovieInfo/MovieInfo.csproj" />
+        <entry key="MovieInfo/MainWindow.axaml" value="MovieInfo/MovieInfo.csproj" />
+        <entry key="MovieInfo/Test.axaml" value="MovieInfo/MovieInfo.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

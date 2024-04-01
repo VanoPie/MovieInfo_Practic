@@ -1,0 +1,62 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="350"
+        x:Class="MovieInfo.EditorWindow"
+        Icon="avares://MovieInfo/filmicon.png"
+        Height="770"
+        Width="720"
+        WindowStartupLocation="CenterScreen"
+        Title="Форма управления данынми">
+    <Grid>
+        <UniformGrid Columns="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Name="TitleBlock" HorizontalAlignment="Center" VerticalAlignment="Center" Margin = "90 10 0 0" FontSize = "20" FontWeight="Bold">Действия с данными</TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin = "0 25 0 0">Код: </TextBlock>
+                <TextBox Name="id_field" x:CompileBindings="False" Text="{Binding Код}" Width="500" Height="5" Margin = "120 0 0 0" Watermark="Индивидуальный код фильма"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin = "0 25 0 0">Название: </TextBlock>
+                <TextBox Name="filmName_field" x:CompileBindings="False" Text="{Binding Название}" Width="500" Height="5" Margin = "78 0 0 0" Watermark="Наименование фильма"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin = "0 25 0 0">Режиссер: </TextBlock>
+                <TextBox Name="director_field" x:CompileBindings="False" Text="{Binding Режиссер}" Width="500" Height="5" Margin = "75 0 0 0" Watermark="ФИО режиссера фильма"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin = "0 25 0 0">Композитор: </TextBlock>
+                <TextBox Name="composer_field" x:CompileBindings="False" Text="{Binding Композитор}" Width="500" Height="5" Margin = "63 0 0 0" Watermark="ФИО композитора фильма"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin = "0 25 0 0">Жанр: </TextBlock>
+                <TextBox Name="viewMovie_field" x:CompileBindings="False" Text="{Binding Жанр}" Width="500" Height="5" Margin = "110 0 0 0" Watermark="Жанр фильма"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin = "0 25 0 0">Сценарист: </TextBlock>
+                <TextBox Name="scriptAuthor_field" x:CompileBindings="False" Text="{Binding Сценарист}" Width="500" Height="5" Margin = "73 0 0 0" Watermark="ФИО сценариста фильма"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin = "0 25 0 0">Звук: </TextBlock>
+                <TextBox Name="soundtrack_field" x:CompileBindings="False" Text="{Binding Звук}" Width="500" Height="5" Margin = "115 0 0 0" Watermark="Тип звуковой техники"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin = "0 25 0 0">Цвет: </TextBlock>
+                <TextBox Name="color_field" x:CompileBindings="False" Text="{Binding Цвет}" Width="500" Height="5" Margin = "115 0 0 0" Watermark="Цветовая схема фильма"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin = "0 25 0 0">Формат: </TextBlock>
+                <TextBox Name="format_field" x:CompileBindings="False" Text="{Binding Формат}" Width="500" Height="5" Margin = "95 0 0 0" Watermark="Формат фильма"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin = "0 25 0 0">Количество_частей: </TextBlock>
+                <TextBox Name="numberOfSeries_field" x:CompileBindings="False" Text="{Binding Количество_частей}" Width="500" Height="5" Margin = "13 0 0 0" Watermark="Количество частей/сезонов/серий"></TextBox>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <Button Name="Save" Content="Сохранить" Click="Save_OnClick"  Margin = "0 15 0 20"></Button>
+                <Button Name="Back" Content="Назад" Click="GoBack_OnClick"  Margin = "500 15 0 20"></Button>
+            </StackPanel>
+        </UniformGrid>
+    </Grid>
+</Window>
