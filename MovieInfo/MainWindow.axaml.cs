@@ -65,7 +65,7 @@ public partial class MainWindow : Window
     {
         try
         {
-            Movie mvs = DataGrid.SelectedItem as Movie; //получение выбранного объекта MusicClass
+            Movie mvs = DataGrid.SelectedItem as Movie; //получение выбранного объекта Movie
             if (mvs == null) //если строки не выделены
             {
                 return; //выход из метода
@@ -92,7 +92,7 @@ public partial class MainWindow : Window
     }
     private void AddData_Click(object? sender, RoutedEventArgs e)
     {
-        Movie newMovie = new Movie(); //создание нового экземпляр класса MusicClass
+        Movie newMovie = new Movie(); //создание нового экземпляр класса Movie
         EditorWindow add = new EditorWindow(newMovie, movies); //открытие окна добавления/редактирования с новым экземпляром класса
         // Настрйока параметров открываемой формы и её отображение
         add.TitleBlock.Text = "Добавление данных";
